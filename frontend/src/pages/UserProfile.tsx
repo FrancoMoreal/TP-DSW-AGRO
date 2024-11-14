@@ -3,7 +3,7 @@ import { Container, Typography, Box, CircularProgress, Paper, TextField, Button,
 import EditIcon from '@mui/icons-material/Edit';
 import {jwtDecode} from 'jwt-decode';
 import { fetchUsuario, updateUsuario } from '../services/UserService';
-import { Usuario } from '../types/Usuario';
+import { Usuario } from '../models/Usuario.ts';
 
 const UserProfile: React.FC = () => {
   const [usuario, setUsuario] = useState<Usuario | null>(null);

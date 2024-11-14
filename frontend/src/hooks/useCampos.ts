@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Campo } from '../types/Campo';
+import { Campo } from '../models/Campo.ts';
 import CampoService from '../services/CampoService';
 
 const useCampos = (clienteId: string) => {

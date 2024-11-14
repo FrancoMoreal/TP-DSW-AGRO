@@ -1,4 +1,4 @@
-import { Lote } from "./Lote";
+import { Lote } from "./Lote.ts";
 
 export type OrdenTrabajo = {
   nroOrdenTrabajo: number;

@@ -8,7 +8,7 @@ import {
   DialogContent,
   DialogActions,
 } from '@mui/material';
-import { Campo } from '../../types/Campo';
+import { Campo } from '../../models/Campo.ts';
 
 interface ActualizarCampoProps {
   campo: Campo | null;

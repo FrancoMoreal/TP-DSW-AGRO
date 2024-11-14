@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
-import { Cliente } from '../types/Cliente';
+import { Cliente } from '../models/Cliente.ts';
 import HttpClient from './axiosInstance';
-import { Campo } from '../types/Campo';
+import { Campo } from '../models/Campo.ts';
 
 class ClienteService {
   path: string;

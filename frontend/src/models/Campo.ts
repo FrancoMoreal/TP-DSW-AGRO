@@ -1,4 +1,4 @@
-import { Cliente } from "./Cliente";
+import { Cliente } from "./Cliente.ts";
 
 export interface Campo {
 campoId: number;

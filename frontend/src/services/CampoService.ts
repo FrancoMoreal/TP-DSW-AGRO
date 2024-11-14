@@ -4,7 +4,7 @@
 
 import { AxiosResponse } from "axios";
 import HttpClient from "./axiosInstance";
-import { Campo } from "../types/Campo";
+import { Campo } from "../models/Campo.ts";
 
 class CampoService {
   path: string;

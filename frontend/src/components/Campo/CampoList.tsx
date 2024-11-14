@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Campo } from '../../types/Campo';
+import { useEffect, useState } from 'react';
+import { Campo } from '../../models/Campo.ts';
 import {
   Table,
   TableBody,

@@ -7,10 +7,10 @@ import LoteModal from '../components/LoteModal';
 import useClientes from '../hooks/useClientes';
 import useCampos from '../hooks/useCampos';
 import useLotes from '../hooks/useLotes';
-import { Lote } from '../types/Lote';
+import { Lote } from '../models/Lote.ts';
 import LoteService from '../services/LoteService';
 import NotificationService from '../utils/NotificationService';
-import { Campo } from '../types/Campo';
+import { Campo } from '../models/Campo.ts';
 import OrdenTrabajoService from '../services/OrdenTrabajoService';
 
 interface DetalleTrabajo {

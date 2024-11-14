@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { OrdenTrabajo } from '../types/OrdenTrabajo';
+import { OrdenTrabajo } from '../models/OrdenTrabajo.ts';
 
 export const useOrdenesTrabajo = () => {
   const [ordenes, setOrdenes] = useState<OrdenTrabajo[]>([]);

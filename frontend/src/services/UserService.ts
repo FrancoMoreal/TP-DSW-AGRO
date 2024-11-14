@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { Usuario } from '../types/Usuario';
+import { Usuario } from '../models/Usuario.ts';
 
 class UserService {
   path: string;

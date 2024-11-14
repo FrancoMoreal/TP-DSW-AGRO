@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { TextField, Button, Stack, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
-import { Cliente } from '../../types/Cliente';
+import { Cliente } from '../../models/Cliente.ts';
 
 interface ActualizarClienteProps {
   cliente: Cliente | null;

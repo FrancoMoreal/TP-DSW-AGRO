@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Modal, Box, Typography, TextField, Button } from '@mui/material';
 import NotificationService from '../utils/NotificationService';
-import { Lote } from '../types/Lote';
+import { Lote } from '../models/Lote.ts';
 import LoteService from '../services/LoteService';
 
 // export interface LoteData {

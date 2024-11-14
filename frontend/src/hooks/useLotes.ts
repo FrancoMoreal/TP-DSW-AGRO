@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Lote } from '../types/Lote';
+import { Lote } from '../models/Lote.ts';
 import LoteService from '../services/LoteService';
 
 const useLotes = (campoId: string) => {

@@ -1,4 +1,4 @@
-import { Campo } from './Campo';
+import { Campo } from './Campo.ts';
 
 export interface Lote {
   loteId: number;

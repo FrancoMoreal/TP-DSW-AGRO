@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 
 import HttpClient from './axiosInstance';
-import { Lote } from '../types/Lote';
+import { Lote } from '../models/Lote.ts';
 
 class LoteService {
   path: string;
