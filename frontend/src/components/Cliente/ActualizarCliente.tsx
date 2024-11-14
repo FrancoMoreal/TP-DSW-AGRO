@@ -1,14 +1,6 @@
 import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
-import {
-  TextField,
-  Button,
-  Stack,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-} from '@mui/material';
-import { Cliente } from '../types/Cliente';
+import { TextField, Button, Stack, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
+import { Cliente } from '../../types/Cliente';
 
 interface ActualizarClienteProps {
   cliente: Cliente | null;
@@ -17,12 +9,7 @@ interface ActualizarClienteProps {
   onSave: (updatedCliente: Cliente) => void;
 }
 
-const ActualizarCliente: React.FC<ActualizarClienteProps> = ({
-  cliente,
-  open,
-  onClose,
-  onSave,
-}) => {
+const ActualizarCliente: React.FC<ActualizarClienteProps> = ({ cliente, open, onClose, onSave }) => {
   const [formValues, setFormValues] = useState<Cliente | null>(null);
 
   useEffect(() => {

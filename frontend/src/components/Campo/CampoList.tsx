@@ -67,7 +67,7 @@ const CamposList: React.FC<CamposListProps> = ({ clienteId }) => {
   const handleEdit = (campo: Campo) => {
     setCampoSeleccionado(campo);
     setOpenEditModal(true);
-  }
+  };
 
   const handleUpdateCampo = async (campoId: number, updatedCampo: Campo) => {
     try {
@@ -86,36 +86,33 @@ const CamposList: React.FC<CamposListProps> = ({ clienteId }) => {
     } finally {
       setOpenEditModal(false);
     }
-  }
-  
+  };
+
   const handleDelete = async (campoId: number) => {
     const onConfirm = async () => {
       try {
         // Llamada al servicio para eliminar el campo
         await CampoService.deleteCampo(campoId);
-  
+
         // Notificación de éxito
         NotificationService.info('Campo eliminado exitosamente');
-  
+
         // Actualizar la lista de campos localmente
         fetchCampos();
-        
       } catch (error) {
         const errorMessage = error instanceof Error ? error.message : 'Error desconocido al eliminar el campo';
         NotificationService.error(errorMessage);
         console.error('Error al eliminar el campo:', error);
       }
-    }
+    };
     confirm('¿Estás seguro de que deseas eliminar este campo?', onConfirm);
   };
 
- 
-  
   useEffect(() => {
     fetchCampos();
   }, [clienteId]);
 
-  const handleChangePage = (event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
+  const handleChangePage = (_event: React.MouseEvent<HTMLButtonElement> | null, newPage: number) => {
     setPage(newPage);
   };
 
@@ -137,21 +134,18 @@ const CamposList: React.FC<CamposListProps> = ({ clienteId }) => {
 
   return (
     <Paper sx={{ padding: 3, boxShadow: 3 }}>
-      <Box sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
           marginBottom: 2,
-        }}>
+        }}
+      >
         <Typography variant='h6' color='primary' gutterBottom>
           Listado de Campos
         </Typography>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleOpenModal}
-          sx={{ marginRight: 2 }}
-        >
+        <Button variant='contained' color='primary' onClick={handleOpenModal} sx={{ marginRight: 2 }}>
           Campo <Add />
         </Button>
       </Box>
@@ -170,13 +164,13 @@ const CamposList: React.FC<CamposListProps> = ({ clienteId }) => {
                 <TableCell>{campo.campoUbicacion}</TableCell>
                 <TableCell>
                   {/* Botón de edición */}
-                  <IconButton onClick={() => handleEdit(campo)} color="primary">
+                  <IconButton onClick={() => handleEdit(campo)} color='primary'>
                     <EditIcon />
                   </IconButton>
                 </TableCell>
                 <TableCell>
                   {/* Botón de eliminación */}
-                  <IconButton onClick={() => handleDelete(campo.campoId)} color="error">
+                  <IconButton onClick={() => handleDelete(campo.campoId)} color='error'>
                     <DeleteIcon />
                   </IconButton>
                 </TableCell>
@@ -184,12 +178,7 @@ const CamposList: React.FC<CamposListProps> = ({ clienteId }) => {
             ))}
           </TableBody>
         </Table>
-        <NuevoCampo
-          open={openModal}
-          onClose={handleCloseModal}
-          onCampoCreado={fetchCampos}
-          clienteId={clienteId}
-        />
+        <NuevoCampo open={openModal} onClose={handleCloseModal} onCampoCreado={fetchCampos} clienteId={clienteId} />
         <ActualizarCampo
           campo={campoSeleccionado}
           open={openEditModal}
