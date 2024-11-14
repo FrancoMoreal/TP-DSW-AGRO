@@ -57,6 +57,7 @@ const createCampo = async (req: Request, res: Response): Promise<void> => {
 
 // modificar campo
 const updatecampo = async (req: Request, res: Response): Promise<void> => {
+  const clienteId = parseInt(req.params.clienteId, 10);
   const  campoId  = parseInt(req.params.campoId, 10);
   const {campoNombre, campoUbicacion } = req.body;
 

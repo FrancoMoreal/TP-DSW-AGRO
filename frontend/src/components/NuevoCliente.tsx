@@ -1,8 +1,8 @@
 // NuevoCliente.tsx
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { TextField, Button, Stack, Dialog, DialogTitle, DialogContent, DialogActions, Alert } from '@mui/material';
-import NotificationService from '../../utils/NotificationService';
-import ClienteService from '../../services/ClienteService';
+import NotificationService from '../utils/NotificationService';
+import ClienteService from '../services/ClienteService';
 
 interface NuevoClienteProps {
   open: boolean;
@@ -55,15 +55,6 @@ const NuevoCliente: React.FC<NuevoClienteProps> = ({ open, onClose, onClienteCre
         clienteProvincia: formValues.provincia,
       });
 
-      
-      if (response.status === 400 && (response.data as any).message) {
-        const errorMessage = (response.data as any).message;
-        setError(errorMessage);
-        NotificationService.error(errorMessage);
-        return;
-      }
-  
-
       if (response.status !== 201) {
         setError('Error al crear cliente');
         NotificationService.error('Error al crear el cliente');
@@ -97,16 +88,7 @@ const NuevoCliente: React.FC<NuevoClienteProps> = ({ open, onClose, onClienteCre
         {success && <Alert severity='success'>{success}</Alert>}
         <form onSubmit={handleSubmit}>
           <Stack spacing={2} sx={{ mt: 2 }}>
-            <TextField
-              label='Nombre'
-              name='nombre'
-              fullWidth
-              required
-              value={formValues.nombre}
-              onChange={handleChange}
-              error={Boolean(error && formValues.nombre === '')}
-              helperText={formValues.nombre === '' && error ? error : ''}
-            />
+            <TextField label='Nombre' name='nombre' fullWidth required value={formValues.nombre} onChange={handleChange} />
             <TextField label='Email' name='email' fullWidth required type='email' value={formValues.email} onChange={handleChange} />
             <TextField label='Teléfono' name='telefono' fullWidth required value={formValues.telefono} onChange={handleChange} />
             <TextField label='Dirección' name='direccion' fullWidth required value={formValues.direccion} onChange={handleChange} />

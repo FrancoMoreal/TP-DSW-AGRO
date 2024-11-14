@@ -31,7 +31,7 @@ const App: React.FC = () => {
         localStorage.removeItem('token');
         logout();
         navigate('/');
-        //NotificationService.error('Token no válido');
+        NotificationService.error('Token no válido');
       }
     } else {
       const currentPath = window.location.pathname;

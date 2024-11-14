@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Campo } from '../types/Campo';
-import CampoService from '../services/CampoService';
+import ClienteService from '../services/ClienteService';
 
 const useCampos = (clienteId: string) => {
   const [campos, setCampos] = useState<Campo[]>([]);
@@ -9,7 +9,7 @@ const useCampos = (clienteId: string) => {
     const fetchCampos = async () => {
       if (!clienteId) return;
       try {
-        const response = await CampoService.getAllCamposByClienteId(clienteId);
+        const response = await ClienteService.getAllCamposByClienteId(clienteId);
         console.log(response);
         // Agregar manejo de errores
 
@@ -21,8 +21,8 @@ const useCampos = (clienteId: string) => {
       
       
       */
-        
-        setCampos(response.data);
+        // @ts-expect-error
+        setCampos(response.data.campos);
       } catch (error) {
         console.error('Error al obtener campos:', error);
         // agregar manejo de errores

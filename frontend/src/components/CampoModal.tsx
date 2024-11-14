@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, Box, Typography, TextField, Button } from '@mui/material';
-import NotificationService from '../../utils/NotificationService';
+import NotificationService from '../utils/NotificationService';
 
 interface CampoModalProps {
   open: boolean;

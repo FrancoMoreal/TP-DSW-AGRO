@@ -14,7 +14,7 @@ class LoteService {
     return HttpClient.get<Lote[]>(`${this.path}/${campoId}`);
   }
 
-  createLoteByCampo(campoId: number, loteCreation: Partial<Lote> ): Promise<AxiosResponse<Lote>> {
+  createLoteByCampo(campoId: number, loteCreation: Lote): Promise<AxiosResponse<Lote>> {
     return HttpClient.post<Lote>(`${this.path}/${campoId}`, loteCreation);
   }
 }

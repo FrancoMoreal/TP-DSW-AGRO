@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { CircularProgress, Typography, Box, Container, Paper } from '@mui/material';
-import ClienteCard from '../components/Cliente/ClienteCard';
+import ClienteCard from '../components/ClienteCard';
 import ClienteService from '../services/ClienteService';
 import NotificationService from '../utils/NotificationService';
-import CampoList from '../components/Campo/CampoList';
+import CampoList from '../components/CampoList';
 
 interface ClienteData {
   clienteId: number;

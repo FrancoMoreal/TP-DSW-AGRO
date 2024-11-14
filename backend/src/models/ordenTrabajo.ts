@@ -17,7 +17,7 @@ OrdenTrabajo.init(
       autoIncrement: true, 
     },
     fecha: {
-      type: DataTypes.DATE,
+      type: DataTypes.DATEONLY,
       allowNull: false,
     },
     costototal: {
@@ -29,8 +29,6 @@ OrdenTrabajo.init(
         model: "Lotes",
         key: "loteId",
       },
-      onUpdate: "CASCADE",
-      onDelete: "CASCADE",
     },
     usuarioId: {
       type: DataTypes.INTEGER,

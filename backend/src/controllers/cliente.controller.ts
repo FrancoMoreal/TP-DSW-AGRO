@@ -92,7 +92,6 @@ const getClienteCampos = async (req: Request, res: Response): Promise<void> => {
     res.status(500).json({ message: "Error al obtener un cliente" });
   }
 };
-
 // Crear cliente
 const createCliente = async (req: Request, res: Response): Promise<void> => {
   const token = req.headers.authorization || "";
